@@ -25,13 +25,16 @@ public class SpeedItem extends Item {
             playerIn.abilities.allowFlying = true;
             playerIn.abilities.setWalkSpeed(10);
 
+
+        } else {
+
+            playerIn.abilities.allowFlying = false;
+            playerIn.abilities.setWalkSpeed((float) 0.2);
+
         }
-
-
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 }
-
 
 
 

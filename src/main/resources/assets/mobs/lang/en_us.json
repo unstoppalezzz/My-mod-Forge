@@ -2,6 +2,6 @@
   "item.mobs.vanish_item": "Vanish",
   "item.mobs.fly_item": "Fly",
   "item.mobs.speed_item": "Speed",
-  "item.mobs.speedreset_item": "Speed Reset",
-  "itemGroup.unstoppalezzztab": "Unstoppalezzz's Tab"
+  "itemGroup.unstoppalezzztab": "Unstoppalezzz's Tab",
+  "vanish": ""
 }

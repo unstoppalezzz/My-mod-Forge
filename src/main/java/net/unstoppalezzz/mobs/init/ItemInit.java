@@ -7,7 +7,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.unstoppalezzz.mobs.Main;
 import net.unstoppalezzz.mobs.object.Items.FlyItem;
 import net.unstoppalezzz.mobs.object.Items.SpeedItem;
-import net.unstoppalezzz.mobs.object.Items.SpeedResetItem;
 import net.unstoppalezzz.mobs.object.Items.VanishItem;
 
 public class ItemInit {
@@ -24,8 +23,6 @@ public class ItemInit {
     public static final RegistryObject<SpeedItem> Speed_ITEM = ITEMS.register("speed_item",
             () -> new SpeedItem(new Item.Properties().group(Main.UnstoppalezzzItemGroup.instance)));
 
-    public static final RegistryObject<SpeedResetItem> SpeedReset_ITEM = ITEMS.register("speedreset_item",
-            () -> new SpeedResetItem(new Item.Properties().group(Main.UnstoppalezzzItemGroup.instance)));
 }
 
 

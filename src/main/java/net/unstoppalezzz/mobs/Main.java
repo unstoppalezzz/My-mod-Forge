@@ -4,7 +4,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.ForgeConfig;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -52,7 +54,9 @@ public class Main {
         instance = this;
         MinecraftForge.EVENT_BUS.register(this);
 
-
+    }
+    @SubscribeEvent
+    public void onServerStarting(FMLServerStartingEvent event) {
     }
 
     public static class UnstoppalezzzItemGroup extends ItemGroup {
