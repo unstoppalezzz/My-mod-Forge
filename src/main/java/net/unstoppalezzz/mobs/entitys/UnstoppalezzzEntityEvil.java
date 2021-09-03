@@ -2,6 +2,7 @@ package net.unstoppalezzz.mobs.entitys;
 
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.BreedGoal;
@@ -15,6 +16,7 @@ import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -23,26 +25,20 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.unstoppalezzz.mobs.init.ModEntityTypes;
 
 public class UnstoppalezzzEntityEvil extends AnimalEntity {
-
     private EatGrassGoal eatGrassGoal;
     private int exampleTimer;
 
     public UnstoppalezzzEntityEvil(EntityType<? extends AnimalEntity> type, World worldIn) {
         super(type, worldIn);
-
-
     }
 
-    @Override
     public AgeableEntity createChild(AgeableEntity ageable) {
-        UnstoppalezzzEntityEvil entity = new UnstoppalezzzEntityEvil(ModEntityTypes.UNSTOPPALEZZZEvil_ENTITY.get(), this.world);
-        entity.onInitialSpawn(this.world, this.world.getDifficultyForLocation(new BlockPos(entity)),
-                SpawnReason.BREEDING, null, null);
+        UnstoppalezzzEntityEvil entity = new UnstoppalezzzEntityEvil((EntityType)ModEntityTypes.UNSTOPPALEZZZEvil_ENTITY.get(), this.world);
+        entity.onInitialSpawn(this.world, this.world.getDifficultyForLocation(new BlockPos(entity)), SpawnReason.BREEDING, (ILivingEntityData)null, (CompoundNBT)null);
         entity.setGlowing(true);
         return entity;
     }
 
-    @Override
     protected void registerGoals() {
         super.registerGoals();
         this.eatGrassGoal = new EatGrassGoal(this);
@@ -56,17 +52,16 @@ public class UnstoppalezzzEntityEvil extends AnimalEntity {
         this.goalSelector.addGoal(7, new LookRandomlyGoal(this));
     }
 
-    @Override
     protected void updateAITasks() {
         this.exampleTimer = this.eatGrassGoal.getEatingGrassTimer();
         super.updateAITasks();
     }
 
-    @Override
     public void livingTick() {
         if (this.world.isRemote) {
             this.exampleTimer = Math.max(0, this.exampleTimer - 1);
         }
+
         super.livingTick();
     }
 
@@ -94,8 +89,7 @@ public class UnstoppalezzzEntityEvil extends AnimalEntity {
         } else if (this.exampleTimer >= 4 && this.exampleTimer <= 36) {
             return 1.0F;
         } else {
-            return this.exampleTimer < 4 ? ((float) this.exampleTimer - p_70894_1_) / 4.0F
-                    : -((float) (this.exampleTimer - 40) - p_70894_1_) / 4.0F;
+            return this.exampleTimer < 4 ? ((float)this.exampleTimer - p_70894_1_) / 4.0F : -((float)(this.exampleTimer - 40) - p_70894_1_) / 4.0F;
         }
     }
 
@@ -109,9 +103,7 @@ public class UnstoppalezzzEntityEvil extends AnimalEntity {
         }
     }
 
-    @Override
     public void onStruckByLightning(LightningBoltEntity lightningBolt) {
         this.setGlowing(true);
     }
-
-    }
+}

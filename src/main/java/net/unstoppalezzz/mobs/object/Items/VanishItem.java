@@ -1,11 +1,6 @@
 package net.unstoppalezzz.mobs.object.Items;
 
-import java.util.*;
-import net.minecraft.client.GameConfiguration;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.IngameGui;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.gui.MinecraftServerGui;
+
 import net.minecraft.world.World;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -42,14 +37,3 @@ public class VanishItem extends Item {
         return super.onItemRightClick(world, player, hand);
     }
 }
-
-
-
-
-
-
-
-
-
-
-

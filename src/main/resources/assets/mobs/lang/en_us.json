@@ -3,5 +3,14 @@
   "item.mobs.fly_item": "Fly",
   "item.mobs.speed_item": "Speed",
   "itemGroup.unstoppalezzztab": "Unstoppalezzz's Tab",
-  "vanish": ""
+  "vanish": "",
+  "item.mobs.flash_helmet" : "Flash Helmet",
+  "item.mobs.flash_chestplate" : "Flash Chestplate",
+  "item.mobs.flash_leggings" : "Flash Leggings",
+  "item.mobs.flash_boots" : "Flash Boots",
+  "item.mobs.flash_item" : "Enchatend Golden Carrot",
+  "item.mobs.unstoppalezzz_spawn_egg" : "Unstoppalezzz Spawn Egg",
+  "item.mobs.flash_fan2109_spawn_egg" : "Flash_fan2109 Spawn Egg",
+  "item.mobs.unstoppalezzz_spawn_egg_evil" : "Vladtheimpaler5 Spawn Egg",
+  "item.mobs.noddlessnakeman2_spawn_egg" : "Noddlessnakeman2 Spawn Egg"
 }

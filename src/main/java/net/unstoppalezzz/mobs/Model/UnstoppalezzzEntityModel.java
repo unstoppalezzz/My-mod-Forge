@@ -9,10 +9,6 @@ import net.minecraft.entity.Entity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-/**
- * PlayerModel - Either Mojang or a mod author (Taken From Memory)
- * Created using Tabula 8.0.0
- */
 @OnlyIn(Dist.CLIENT)
 public class UnstoppalezzzEntityModel<T extends Entity> extends EntityModel<T> {
     public ModelRenderer Backround6;
@@ -31,8 +27,8 @@ public class UnstoppalezzzEntityModel<T extends Entity> extends EntityModel<T> {
     public ModelRenderer Backround;
 
     public UnstoppalezzzEntityModel() {
-        this.textureWidth = 64;
-        this.textureHeight = 64;
+        this.textureWidth  = 64;
+        this.textureHeight  = 64;
         this.Body = new ModelRenderer(this, 16, 16);
         this.Body.setRotationPoint(0.0F, 0.0F, 0.0F);
         this.Body.addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, 0.0F, 0.0F, 0.0F);
@@ -78,21 +74,18 @@ public class UnstoppalezzzEntityModel<T extends Entity> extends EntityModel<T> {
     }
 
     @Override
-    public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) { 
-        ImmutableList.of(this.Body, this.RightArm, this.Backround3, this.LeftArm, this.Backround2, this.Cape, this.Backround1, this.Backround, this.Backround5, this.Backround4, this.Backround6, this.head, this.RightLeg, this.LeftLeg).forEach((modelRenderer) -> { 
+    public void render(MatrixStack matrixStackIn, IVertexBuilder bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
+        ImmutableList.of(this.Body, this.RightArm, this.Backround3, this.LeftArm, this.Backround2, this.Cape, this.Backround1, this.Backround, this.Backround5, this.Backround4, this.Backround6, this.head, new ModelRenderer[]{this.RightLeg, this.LeftLeg}).forEach((modelRenderer) -> {
             modelRenderer.render(matrixStackIn, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
         });
     }
-
     @Override
-    public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {}
+    public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    }
 
-    /**
-     * This is a helper function from Tabula to set the rotation of model parts
-     */
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-        modelRenderer.rotateAngleX = x;
-        modelRenderer.rotateAngleY = y;
-        modelRenderer.rotateAngleZ = z;
+        modelRenderer.rotateAngleX  = x;
+        modelRenderer.rotateAngleY  = y;
+        modelRenderer.rotateAngleZ  = z;
     }
 }

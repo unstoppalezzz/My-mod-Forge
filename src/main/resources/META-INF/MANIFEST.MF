@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: My-mod-Forge-83391d29989cba0c4cbfe52a9e5dbef31af
+ 92f1b
+Implementation-Version: 1.0
+Specification-Vendor: examplemodsareus
+Specification-Title: examplemod
+Implementation-Timestamp: 2021-07-02T12:16:23-0400
+Specification-Version: 1
+Implementation-Vendor: examplemodsareus
+

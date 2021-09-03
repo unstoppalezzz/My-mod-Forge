@@ -24,16 +24,16 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.unstoppalezzz.mobs.init.ModEntityTypes;
 
-public class UnstoppalezzzEntity extends AnimalEntity {
+public class noddlessnakeman2entity extends AnimalEntity {
     private EatGrassGoal eatGrassGoal;
     private int exampleTimer;
 
-    public UnstoppalezzzEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
+    public noddlessnakeman2entity(EntityType<? extends AnimalEntity> type, World worldIn) {
         super(type, worldIn);
     }
 
     public AgeableEntity createChild(AgeableEntity ageable) {
-        UnstoppalezzzEntity entity = new UnstoppalezzzEntity((EntityType)ModEntityTypes.UNSTOPPALEZZZ_ENTITY.get(), this.world);
+        noddlessnakeman2entity entity = new noddlessnakeman2entity((EntityType)ModEntityTypes.noddlessnakeman2_ENTITY.get(), this.world);
         entity.onInitialSpawn(this.world, this.world.getDifficultyForLocation(new BlockPos(entity)), SpawnReason.BREEDING, (ILivingEntityData)null, (CompoundNBT)null);
         entity.setGlowing(true);
         return entity;
